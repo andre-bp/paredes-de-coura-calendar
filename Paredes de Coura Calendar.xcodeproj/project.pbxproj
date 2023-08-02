@@ -14,6 +14,8 @@
 		492CEF882A7550D200F3FABA /* ConcertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492CEF872A7550D200F3FABA /* ConcertViewModel.swift */; };
 		492CEF8A2A755DA500F3FABA /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492CEF892A755DA500F3FABA /* ButtonStyle.swift */; };
 		492CEF8D2A756E4A00F3FABA /* DateHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492CEF8C2A756E4A00F3FABA /* DateHelpers.swift */; };
+		492CEF912A758D2500F3FABA /* concerts.json in Resources */ = {isa = PBXBuildFile; fileRef = 492CEF902A758D2500F3FABA /* concerts.json */; };
+		492CEF952A7AAC6500F3FABA /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492CEF942A7AAC6500F3FABA /* JSONParser.swift */; };
 		495A11D42A74578300753586 /* ParedesDeCouraCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11D32A74578300753586 /* ParedesDeCouraCalendarApp.swift */; };
 		495A11D62A74578300753586 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11D52A74578300753586 /* ContentView.swift */; };
 		495A11D82A74578600753586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495A11D72A74578600753586 /* Assets.xcassets */; };
@@ -55,6 +57,8 @@
 		492CEF872A7550D200F3FABA /* ConcertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertViewModel.swift; sourceTree = "<group>"; };
 		492CEF892A755DA500F3FABA /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		492CEF8C2A756E4A00F3FABA /* DateHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelpers.swift; sourceTree = "<group>"; };
+		492CEF902A758D2500F3FABA /* concerts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = concerts.json; sourceTree = "<group>"; };
+		492CEF942A7AAC6500F3FABA /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		495A11D02A74578300753586 /* Paredes de Coura Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paredes de Coura Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		495A11D32A74578300753586 /* ParedesDeCouraCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParedesDeCouraCalendarApp.swift; sourceTree = "<group>"; };
 		495A11D52A74578300753586 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				492CEF8C2A756E4A00F3FABA /* DateHelpers.swift */,
+				492CEF942A7AAC6500F3FABA /* JSONParser.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 		495A11D22A74578300753586 /* Paredes de Coura Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				492CEF902A758D2500F3FABA /* concerts.json */,
 				492CEF8B2A756E3D00F3FABA /* Helpers */,
 				492CEF802A7530EB00F3FABA /* Explore */,
 				492CEF7F2A7530D000F3FABA /* Homepage */,
@@ -307,6 +313,7 @@
 			files = (
 				495A11DB2A74578600753586 /* Preview Assets.xcassets in Resources */,
 				495A11D82A74578600753586 /* Assets.xcassets in Resources */,
+				492CEF912A758D2500F3FABA /* concerts.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +344,7 @@
 				495A12062A74583800753586 /* HomepageView.swift in Sources */,
 				495A11D62A74578300753586 /* ContentView.swift in Sources */,
 				495A120A2A74584C00753586 /* CalendarView.swift in Sources */,
+				492CEF952A7AAC6500F3FABA /* JSONParser.swift in Sources */,
 				492CEF862A75505900F3FABA /* ExploreViewModel.swift in Sources */,
 				492CEF8A2A755DA500F3FABA /* ButtonStyle.swift in Sources */,
 				495A11D42A74578300753586 /* ParedesDeCouraCalendarApp.swift in Sources */,

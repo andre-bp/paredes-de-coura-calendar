@@ -7,6 +7,7 @@ final class ConcertViewModel: Identifiable {
     let concertHour: String
     let date: Date
     let imageURL: URL?
+    var isBookmarked: Bool
     let stageName: String
 
     init(_ concert: Concert) {
@@ -17,15 +18,26 @@ final class ConcertViewModel: Identifiable {
         concertHour = String(hour) + "h" + String(minutes)
         date = concert.date
         imageURL = URL(string: concert.artist.imagePath)
+        isBookmarked = false
         stageName = concert.stage.name
     }
-    
-    init(id: String, artist: String, concertHour: String, date: Date, imageURL: URL?, stageName: String) {
+
+    init(
+        id: String,
+        artist: String,
+        concertHour: String,
+        date: Date,
+        imageURL: URL?,
+        isBookmarked: Bool = false,
+        stageName: String
+    ) {
         self.id = id
         self.artist = artist
         self.concertHour = concertHour
         self.date = date
         self.imageURL = imageURL
+        self.isBookmarked = isBookmarked
         self.stageName = stageName
     }
 }
+ // provavelmente vou ter que adicionar o isBookmarked aqui para ver como reage de uma view para outra 

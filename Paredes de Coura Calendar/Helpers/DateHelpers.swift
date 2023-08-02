@@ -18,4 +18,8 @@ extension Date {
         dateFormatter.dateFormat = "EEEE"
         return dateFormatter.string(from: self).capitalized
     }
+
+    var dayAfter: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date()
+    }
 }

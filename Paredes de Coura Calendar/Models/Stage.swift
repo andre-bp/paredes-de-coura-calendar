@@ -1,4 +1,4 @@
-struct Stage {
+struct Stage: Decodable {
     let id: String
     let name: String
 }

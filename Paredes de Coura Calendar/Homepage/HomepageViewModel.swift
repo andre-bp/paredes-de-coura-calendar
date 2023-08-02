@@ -1,27 +1,34 @@
 import Foundation
 
 final class HomepageViewModel: ObservableObject {
-    let dates: [FestivalDate]
+    lazy var dates: [Date] = [Date(), Date().dayAfter]
     let concerts: [ConcertViewModel]
     @Published var filteredConcerts: [ConcertViewModel] = []
-    
-    init(dates: [FestivalDate], concerts: [Concert]) {
-        self.dates = dates
-        self.concerts = concerts.map { ConcertViewModel($0) }
+
+    init(concerts: [ConcertViewModel]) {
+        self.concerts = concerts
         filterConcerts(by: dates[0])
     }
-    
-    func filterConcerts(by date: FestivalDate) {
-        let selectedComponents = date.date.dayMonthYearComponents()
-        
+
+    func filterConcerts(by date: Date) {
+        let selectedComponents = date.dayMonthYearComponents()
+
         filteredConcerts = concerts.filter {
             let itemcomponent = $0.date.dayMonthYearComponents()
             return itemcomponent == selectedComponents
         }
     }
-}
 
-struct FestivalDate: Identifiable {
-    let id: String
-    let date: Date
+    func buttonText(selectedDate: Date) -> String {
+        for (index, date) in dates.enumerated() {
+            if date == selectedDate {
+                if index == 0 {
+                    return "Today"
+                } else if index == 1 {
+                    return "Tomorrow"
+                }
+            }
+        }
+        return ""
+    }
 }

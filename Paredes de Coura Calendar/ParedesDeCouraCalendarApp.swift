@@ -2,11 +2,15 @@ import SwiftUI
 
 @main
 struct ParedesDeCouraCalendarApp: App {
-    let viewModel = RootViewModel()
+    @StateObject var rootViewModel = RootViewModel()
     
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: viewModel)
+            RootView()
+                .environmentObject(rootViewModel)
+                .onAppear {
+                    rootViewModel.load()
+                }
         }
     }
 }
