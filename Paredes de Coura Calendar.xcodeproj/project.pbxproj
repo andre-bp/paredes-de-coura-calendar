@@ -1,0 +1,610 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		495A11D42A74578300753586 /* Paredes_de_Coura_CalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11D32A74578300753586 /* Paredes_de_Coura_CalendarApp.swift */; };
+		495A11D62A74578300753586 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11D52A74578300753586 /* ContentView.swift */; };
+		495A11D82A74578600753586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495A11D72A74578600753586 /* Assets.xcassets */; };
+		495A11DB2A74578600753586 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495A11DA2A74578600753586 /* Preview Assets.xcassets */; };
+		495A11E52A74578700753586 /* Paredes_de_Coura_CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11E42A74578700753586 /* Paredes_de_Coura_CalendarTests.swift */; };
+		495A12002A74580100753586 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11FF2A74580100753586 /* Artists.swift */; };
+		495A12022A74581200753586 /* Concerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12012A74581200753586 /* Concerts.swift */; };
+		495A12042A74581E00753586 /* Stages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12032A74581E00753586 /* Stages.swift */; };
+		495A12062A74583800753586 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12052A74583800753586 /* HomepageView.swift */; };
+		495A12082A74584300753586 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12072A74584300753586 /* ExploreView.swift */; };
+		495A120A2A74584C00753586 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12092A74584C00753586 /* CalendarView.swift */; };
+		495A120C2A74586B00753586 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A120B2A74586B00753586 /* SavedView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		495A11E12A74578700753586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 495A11C82A74578300753586 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 495A11CF2A74578300753586;
+			remoteInfo = "Paredes de Coura Calendar";
+		};
+		495A11EB2A74578700753586 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 495A11C82A74578300753586 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 495A11CF2A74578300753586;
+			remoteInfo = "Paredes de Coura Calendar";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		495A11D02A74578300753586 /* Paredes de Coura Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paredes de Coura Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		495A11D32A74578300753586 /* Paredes_de_Coura_CalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paredes_de_Coura_CalendarApp.swift; sourceTree = "<group>"; };
+		495A11D52A74578300753586 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		495A11D72A74578600753586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		495A11DA2A74578600753586 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		495A11E02A74578700753586 /* Paredes de Coura CalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Paredes de Coura CalendarTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		495A11E42A74578700753586 /* Paredes_de_Coura_CalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paredes_de_Coura_CalendarTests.swift; sourceTree = "<group>"; };
+		495A11EA2A74578700753586 /* Paredes de Coura CalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Paredes de Coura CalendarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		495A11FF2A74580100753586 /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
+		495A12012A74581200753586 /* Concerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concerts.swift; sourceTree = "<group>"; };
+		495A12032A74581E00753586 /* Stages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stages.swift; sourceTree = "<group>"; };
+		495A12052A74583800753586 /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
+		495A12072A74584300753586 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		495A12092A74584C00753586 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		495A120B2A74586B00753586 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		495A11CD2A74578300753586 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495A11DD2A74578700753586 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495A11E72A74578700753586 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		495A11C72A74578300753586 = {
+			isa = PBXGroup;
+			children = (
+				495A11D22A74578300753586 /* Paredes de Coura Calendar */,
+				495A11E32A74578700753586 /* Paredes de Coura CalendarTests */,
+				495A11D12A74578300753586 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		495A11D12A74578300753586 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				495A11D02A74578300753586 /* Paredes de Coura Calendar.app */,
+				495A11E02A74578700753586 /* Paredes de Coura CalendarTests.xctest */,
+				495A11EA2A74578700753586 /* Paredes de Coura CalendarUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		495A11D22A74578300753586 /* Paredes de Coura Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				495A11FE2A7457CE00753586 /* Models */,
+				495A11FD2A7457C100753586 /* Views */,
+				495A11D32A74578300753586 /* Paredes_de_Coura_CalendarApp.swift */,
+				495A11D52A74578300753586 /* ContentView.swift */,
+				495A11D72A74578600753586 /* Assets.xcassets */,
+				495A11D92A74578600753586 /* Preview Content */,
+			);
+			path = "Paredes de Coura Calendar";
+			sourceTree = "<group>";
+		};
+		495A11D92A74578600753586 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				495A11DA2A74578600753586 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		495A11E32A74578700753586 /* Paredes de Coura CalendarTests */ = {
+			isa = PBXGroup;
+			children = (
+				495A11E42A74578700753586 /* Paredes_de_Coura_CalendarTests.swift */,
+			);
+			path = "Paredes de Coura CalendarTests";
+			sourceTree = "<group>";
+		};
+		495A11FD2A7457C100753586 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				495A12052A74583800753586 /* HomepageView.swift */,
+				495A12072A74584300753586 /* ExploreView.swift */,
+				495A12092A74584C00753586 /* CalendarView.swift */,
+				495A120B2A74586B00753586 /* SavedView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		495A11FE2A7457CE00753586 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				495A11FF2A74580100753586 /* Artists.swift */,
+				495A12012A74581200753586 /* Concerts.swift */,
+				495A12032A74581E00753586 /* Stages.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		495A11CF2A74578300753586 /* Paredes de Coura Calendar */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 495A11F42A74578700753586 /* Build configuration list for PBXNativeTarget "Paredes de Coura Calendar" */;
+			buildPhases = (
+				495A11CC2A74578300753586 /* Sources */,
+				495A11CD2A74578300753586 /* Frameworks */,
+				495A11CE2A74578300753586 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Paredes de Coura Calendar";
+			productName = "Paredes de Coura Calendar";
+			productReference = 495A11D02A74578300753586 /* Paredes de Coura Calendar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		495A11DF2A74578700753586 /* Paredes de Coura CalendarTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 495A11F72A74578700753586 /* Build configuration list for PBXNativeTarget "Paredes de Coura CalendarTests" */;
+			buildPhases = (
+				495A11DC2A74578700753586 /* Sources */,
+				495A11DD2A74578700753586 /* Frameworks */,
+				495A11DE2A74578700753586 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				495A11E22A74578700753586 /* PBXTargetDependency */,
+			);
+			name = "Paredes de Coura CalendarTests";
+			productName = "Paredes de Coura CalendarTests";
+			productReference = 495A11E02A74578700753586 /* Paredes de Coura CalendarTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		495A11E92A74578700753586 /* Paredes de Coura CalendarUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 495A11FA2A74578700753586 /* Build configuration list for PBXNativeTarget "Paredes de Coura CalendarUITests" */;
+			buildPhases = (
+				495A11E62A74578700753586 /* Sources */,
+				495A11E72A74578700753586 /* Frameworks */,
+				495A11E82A74578700753586 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				495A11EC2A74578700753586 /* PBXTargetDependency */,
+			);
+			name = "Paredes de Coura CalendarUITests";
+			productName = "Paredes de Coura CalendarUITests";
+			productReference = 495A11EA2A74578700753586 /* Paredes de Coura CalendarUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		495A11C82A74578300753586 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					495A11CF2A74578300753586 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					495A11DF2A74578700753586 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 495A11CF2A74578300753586;
+					};
+					495A11E92A74578700753586 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 495A11CF2A74578300753586;
+					};
+				};
+			};
+			buildConfigurationList = 495A11CB2A74578300753586 /* Build configuration list for PBXProject "Paredes de Coura Calendar" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 495A11C72A74578300753586;
+			productRefGroup = 495A11D12A74578300753586 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				495A11CF2A74578300753586 /* Paredes de Coura Calendar */,
+				495A11DF2A74578700753586 /* Paredes de Coura CalendarTests */,
+				495A11E92A74578700753586 /* Paredes de Coura CalendarUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		495A11CE2A74578300753586 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495A11DB2A74578600753586 /* Preview Assets.xcassets in Resources */,
+				495A11D82A74578600753586 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495A11DE2A74578700753586 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495A11E82A74578700753586 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		495A11CC2A74578300753586 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495A12082A74584300753586 /* ExploreView.swift in Sources */,
+				495A12062A74583800753586 /* HomepageView.swift in Sources */,
+				495A11D62A74578300753586 /* ContentView.swift in Sources */,
+				495A120A2A74584C00753586 /* CalendarView.swift in Sources */,
+				495A11D42A74578300753586 /* Paredes_de_Coura_CalendarApp.swift in Sources */,
+				495A120C2A74586B00753586 /* SavedView.swift in Sources */,
+				495A12022A74581200753586 /* Concerts.swift in Sources */,
+				495A12042A74581E00753586 /* Stages.swift in Sources */,
+				495A12002A74580100753586 /* Artists.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495A11DC2A74578700753586 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				495A11E52A74578700753586 /* Paredes_de_Coura_CalendarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		495A11E62A74578700753586 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		495A11E22A74578700753586 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 495A11CF2A74578300753586 /* Paredes de Coura Calendar */;
+			targetProxy = 495A11E12A74578700753586 /* PBXContainerItemProxy */;
+		};
+		495A11EC2A74578700753586 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 495A11CF2A74578300753586 /* Paredes de Coura Calendar */;
+			targetProxy = 495A11EB2A74578700753586 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		495A11F22A74578700753586 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		495A11F32A74578700753586 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		495A11F52A74578700753586 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Paredes de Coura Calendar/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebp.Paredes-de-Coura-Calendar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		495A11F62A74578700753586 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Paredes de Coura Calendar/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebp.Paredes-de-Coura-Calendar";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		495A11F82A74578700753586 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebp.Paredes-de-Coura-CalendarTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paredes de Coura Calendar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Paredes de Coura Calendar";
+			};
+			name = Debug;
+		};
+		495A11F92A74578700753586 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebp.Paredes-de-Coura-CalendarTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paredes de Coura Calendar.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Paredes de Coura Calendar";
+			};
+			name = Release;
+		};
+		495A11FB2A74578700753586 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebp.Paredes-de-Coura-CalendarUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Paredes de Coura Calendar";
+			};
+			name = Debug;
+		};
+		495A11FC2A74578700753586 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.andrebp.Paredes-de-Coura-CalendarUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Paredes de Coura Calendar";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		495A11CB2A74578300753586 /* Build configuration list for PBXProject "Paredes de Coura Calendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495A11F22A74578700753586 /* Debug */,
+				495A11F32A74578700753586 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		495A11F42A74578700753586 /* Build configuration list for PBXNativeTarget "Paredes de Coura Calendar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495A11F52A74578700753586 /* Debug */,
+				495A11F62A74578700753586 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		495A11F72A74578700753586 /* Build configuration list for PBXNativeTarget "Paredes de Coura CalendarTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495A11F82A74578700753586 /* Debug */,
+				495A11F92A74578700753586 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		495A11FA2A74578700753586 /* Build configuration list for PBXNativeTarget "Paredes de Coura CalendarUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				495A11FB2A74578700753586 /* Debug */,
+				495A11FC2A74578700753586 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 495A11C82A74578300753586 /* Project object */;
+}
