@@ -13,10 +13,11 @@ struct HomepageView: View {
     private var dateSelectorView: some View {
         LazyHStack {
             ForEach(viewModel.dates) { festivalDate in
-                Button(festivalDate.date.description) {
+                Button(festivalDate.date.weekday()) {
                     selectedDate = festivalDate
                     viewModel.filterConcerts(by: selectedDate)
                 }
+                .buttonStyle(RoundedButtonStyle(isSelected: selectedDate.id == festivalDate.id))
             }
         }
     }
@@ -36,28 +37,41 @@ struct HomepageView: View {
     }
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 0) {
             // Header
-            VStack(alignment: .leading) {
-                HStack(alignment: .center, spacing: 8) {
-                    ScrollView(.horizontal) {
-                        dateSelectorView
-                    }
+            VStack(alignment: .leading, spacing: 0) {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    dateSelectorView
                 }
                 .padding(.leading, 8)
-                
-                Text(selectedDate.date.description)
+                .padding(.bottom, 4)
+                .frame(height: 100)
+
+                Text(selectedDate.date.formattedDateString())
                     .padding(.leading, 4)
+                    .padding(.bottom, 8)
+                    .font(Font.title)
+                    .bold()
             }
+            Spacer()
+
             Divider()
-            
+                .padding(.bottom)
+
             itemsListView
+                .padding(.top, 4)
         }
     }
 }
 
-//struct HomepageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HomepageView()
-//    }
-//}
+#if targetEnvironment(simulator)
+struct HomepageView_Previews: PreviewProvider {
+    static let festivalDates = [FestivalDate(id: "1", date: Date()), FestivalDate(id: "2", date: Date())]
+    
+    static let viewModel = HomepageViewModel(dates: festivalDates, concerts: [.stub()])
+    
+    static var previews: some View {
+        HomepageView(viewModel: viewModel)
+    }
+}
+#endif

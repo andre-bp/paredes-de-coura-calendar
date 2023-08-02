@@ -12,7 +12,12 @@ final class HomepageViewModel: ObservableObject {
     }
     
     func filterConcerts(by date: FestivalDate) {
-        filteredConcerts = concerts.filter { $0.date == date.date }
+        let selectedComponents = date.date.dayMonthYearComponents()
+        
+        filteredConcerts = concerts.filter {
+            let itemcomponent = $0.date.dayMonthYearComponents()
+            return itemcomponent == selectedComponents
+        }
     }
 }
 

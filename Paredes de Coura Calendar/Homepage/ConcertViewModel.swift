@@ -12,7 +12,9 @@ final class ConcertViewModel: Identifiable {
     init(_ concert: Concert) {
         id = concert.id
         artist = concert.artist.name
-        concertHour = concert.date.description
+        let hour = Calendar.current.component(.hour, from: concert.date)
+        let minutes = Calendar.current.component(.minute, from: concert.date)
+        concertHour = String(hour) + "h" + String(minutes)
         date = concert.date
         imageURL = URL(string: concert.artist.imagePath)
         stageName = concert.stage.name
