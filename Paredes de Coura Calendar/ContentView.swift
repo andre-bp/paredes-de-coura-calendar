@@ -1,26 +1,39 @@
-//
-//  ContentView.swift
-//  Paredes de Coura Calendar
-//
-//  Created by André Brandão  on 28/07/2023.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    var viewModel: RootViewModel
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            HomepageView(viewModel: viewModel.homepageViewModel)
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Home")
+                }
+            
+            ExploreView()
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Explore")
+                }
+            
+            CalendarView()
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text("Calendar")
+                }
+            
+            SavedView()
+                .tabItem {
+                    Image(systemName: "bookmark")
+                    Text("Saved")
+                }
         }
-        .padding()
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

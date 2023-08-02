@@ -7,18 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		495A11D42A74578300753586 /* Paredes_de_Coura_CalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11D32A74578300753586 /* Paredes_de_Coura_CalendarApp.swift */; };
+		492CEF7E2A75245D00F3FABA /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492CEF7D2A75245D00F3FABA /* RootViewModel.swift */; };
+		492CEF822A75317200F3FABA /* HomepageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492CEF812A75317200F3FABA /* HomepageViewModel.swift */; };
+		492CEF842A7543EF00F3FABA /* ConcertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492CEF832A7543EF00F3FABA /* ConcertView.swift */; };
+		492CEF862A75505900F3FABA /* ExploreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492CEF852A75505900F3FABA /* ExploreViewModel.swift */; };
+		492CEF882A7550D200F3FABA /* ConcertViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492CEF872A7550D200F3FABA /* ConcertViewModel.swift */; };
+		495A11D42A74578300753586 /* ParedesDeCouraCalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11D32A74578300753586 /* ParedesDeCouraCalendarApp.swift */; };
 		495A11D62A74578300753586 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11D52A74578300753586 /* ContentView.swift */; };
 		495A11D82A74578600753586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495A11D72A74578600753586 /* Assets.xcassets */; };
 		495A11DB2A74578600753586 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 495A11DA2A74578600753586 /* Preview Assets.xcassets */; };
 		495A11E52A74578700753586 /* Paredes_de_Coura_CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11E42A74578700753586 /* Paredes_de_Coura_CalendarTests.swift */; };
-		495A12002A74580100753586 /* Artists.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11FF2A74580100753586 /* Artists.swift */; };
-		495A12022A74581200753586 /* Concerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12012A74581200753586 /* Concerts.swift */; };
-		495A12042A74581E00753586 /* Stages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12032A74581E00753586 /* Stages.swift */; };
+		495A12002A74580100753586 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A11FF2A74580100753586 /* Artist.swift */; };
+		495A12022A74581200753586 /* Concert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12012A74581200753586 /* Concert.swift */; };
+		495A12042A74581E00753586 /* Stage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12032A74581E00753586 /* Stage.swift */; };
 		495A12062A74583800753586 /* HomepageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12052A74583800753586 /* HomepageView.swift */; };
 		495A12082A74584300753586 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12072A74584300753586 /* ExploreView.swift */; };
 		495A120A2A74584C00753586 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12092A74584C00753586 /* CalendarView.swift */; };
 		495A120C2A74586B00753586 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A120B2A74586B00753586 /* SavedView.swift */; };
+		495A120E2A7479C800753586 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A120D2A7479C800753586 /* SearchBarView.swift */; };
+		495A12122A74803100753586 /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12112A74803100753586 /* Festival.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,21 +46,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		492CEF7D2A75245D00F3FABA /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
+		492CEF812A75317200F3FABA /* HomepageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageViewModel.swift; sourceTree = "<group>"; };
+		492CEF832A7543EF00F3FABA /* ConcertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertView.swift; sourceTree = "<group>"; };
+		492CEF852A75505900F3FABA /* ExploreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreViewModel.swift; sourceTree = "<group>"; };
+		492CEF872A7550D200F3FABA /* ConcertViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcertViewModel.swift; sourceTree = "<group>"; };
 		495A11D02A74578300753586 /* Paredes de Coura Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Paredes de Coura Calendar.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		495A11D32A74578300753586 /* Paredes_de_Coura_CalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paredes_de_Coura_CalendarApp.swift; sourceTree = "<group>"; };
+		495A11D32A74578300753586 /* ParedesDeCouraCalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParedesDeCouraCalendarApp.swift; sourceTree = "<group>"; };
 		495A11D52A74578300753586 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		495A11D72A74578600753586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		495A11DA2A74578600753586 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		495A11E02A74578700753586 /* Paredes de Coura CalendarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Paredes de Coura CalendarTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		495A11E42A74578700753586 /* Paredes_de_Coura_CalendarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paredes_de_Coura_CalendarTests.swift; sourceTree = "<group>"; };
 		495A11EA2A74578700753586 /* Paredes de Coura CalendarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Paredes de Coura CalendarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		495A11FF2A74580100753586 /* Artists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artists.swift; sourceTree = "<group>"; };
-		495A12012A74581200753586 /* Concerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concerts.swift; sourceTree = "<group>"; };
-		495A12032A74581E00753586 /* Stages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stages.swift; sourceTree = "<group>"; };
+		495A11FF2A74580100753586 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		495A12012A74581200753586 /* Concert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concert.swift; sourceTree = "<group>"; };
+		495A12032A74581E00753586 /* Stage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stage.swift; sourceTree = "<group>"; };
 		495A12052A74583800753586 /* HomepageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomepageView.swift; sourceTree = "<group>"; };
 		495A12072A74584300753586 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		495A12092A74584C00753586 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		495A120B2A74586B00753586 /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		495A120D2A7479C800753586 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		495A12112A74803100753586 /* Festival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +95,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492CEF7F2A7530D000F3FABA /* Homepage */ = {
+			isa = PBXGroup;
+			children = (
+				495A12052A74583800753586 /* HomepageView.swift */,
+				492CEF812A75317200F3FABA /* HomepageViewModel.swift */,
+				492CEF832A7543EF00F3FABA /* ConcertView.swift */,
+				492CEF872A7550D200F3FABA /* ConcertViewModel.swift */,
+			);
+			path = Homepage;
+			sourceTree = "<group>";
+		};
+		492CEF802A7530EB00F3FABA /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				495A120D2A7479C800753586 /* SearchBarView.swift */,
+				495A12072A74584300753586 /* ExploreView.swift */,
+				492CEF852A75505900F3FABA /* ExploreViewModel.swift */,
+			);
+			path = Explore;
+			sourceTree = "<group>";
+		};
 		495A11C72A74578300753586 = {
 			isa = PBXGroup;
 			children = (
@@ -103,12 +138,15 @@
 		495A11D22A74578300753586 /* Paredes de Coura Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				492CEF802A7530EB00F3FABA /* Explore */,
+				492CEF7F2A7530D000F3FABA /* Homepage */,
 				495A11FE2A7457CE00753586 /* Models */,
 				495A11FD2A7457C100753586 /* Views */,
-				495A11D32A74578300753586 /* Paredes_de_Coura_CalendarApp.swift */,
+				495A11D32A74578300753586 /* ParedesDeCouraCalendarApp.swift */,
 				495A11D52A74578300753586 /* ContentView.swift */,
 				495A11D72A74578600753586 /* Assets.xcassets */,
 				495A11D92A74578600753586 /* Preview Content */,
+				492CEF7D2A75245D00F3FABA /* RootViewModel.swift */,
 			);
 			path = "Paredes de Coura Calendar";
 			sourceTree = "<group>";
@@ -132,8 +170,6 @@
 		495A11FD2A7457C100753586 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				495A12052A74583800753586 /* HomepageView.swift */,
-				495A12072A74584300753586 /* ExploreView.swift */,
 				495A12092A74584C00753586 /* CalendarView.swift */,
 				495A120B2A74586B00753586 /* SavedView.swift */,
 			);
@@ -143,9 +179,10 @@
 		495A11FE2A7457CE00753586 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				495A11FF2A74580100753586 /* Artists.swift */,
-				495A12012A74581200753586 /* Concerts.swift */,
-				495A12032A74581E00753586 /* Stages.swift */,
+				495A11FF2A74580100753586 /* Artist.swift */,
+				495A12012A74581200753586 /* Concert.swift */,
+				495A12032A74581E00753586 /* Stage.swift */,
+				495A12112A74803100753586 /* Festival.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -280,15 +317,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495A12122A74803100753586 /* Festival.swift in Sources */,
+				495A120E2A7479C800753586 /* SearchBarView.swift in Sources */,
 				495A12082A74584300753586 /* ExploreView.swift in Sources */,
 				495A12062A74583800753586 /* HomepageView.swift in Sources */,
 				495A11D62A74578300753586 /* ContentView.swift in Sources */,
 				495A120A2A74584C00753586 /* CalendarView.swift in Sources */,
-				495A11D42A74578300753586 /* Paredes_de_Coura_CalendarApp.swift in Sources */,
+				492CEF862A75505900F3FABA /* ExploreViewModel.swift in Sources */,
+				495A11D42A74578300753586 /* ParedesDeCouraCalendarApp.swift in Sources */,
 				495A120C2A74586B00753586 /* SavedView.swift in Sources */,
-				495A12022A74581200753586 /* Concerts.swift in Sources */,
-				495A12042A74581E00753586 /* Stages.swift in Sources */,
-				495A12002A74580100753586 /* Artists.swift in Sources */,
+				495A12022A74581200753586 /* Concert.swift in Sources */,
+				492CEF842A7543EF00F3FABA /* ConcertView.swift in Sources */,
+				492CEF882A7550D200F3FABA /* ConcertViewModel.swift in Sources */,
+				495A12042A74581E00753586 /* Stage.swift in Sources */,
+				492CEF822A75317200F3FABA /* HomepageViewModel.swift in Sources */,
+				492CEF7E2A75245D00F3FABA /* RootViewModel.swift in Sources */,
+				495A12002A74580100753586 /* Artist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
