@@ -1,6 +1,6 @@
 import Foundation
 
-final class RootViewModel: ObservableObject {
+final class Store: ObservableObject {
     enum AppState {
         case initial
         case loading

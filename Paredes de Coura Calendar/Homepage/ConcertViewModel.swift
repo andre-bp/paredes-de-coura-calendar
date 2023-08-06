@@ -1,13 +1,13 @@
 import Foundation
 
-final class ConcertViewModel: Identifiable {
+final class ConcertViewModel: Identifiable, ObservableObject {
 
     let id: String
     let artist: String
     let concertHour: String
     let date: Date
     let imageURL: URL?
-    var isBookmarked: Bool
+    @Published var isBookmarked: Bool
     let stageName: String
 
     init(_ concert: Concert) {
@@ -40,4 +40,3 @@ final class ConcertViewModel: Identifiable {
         self.stageName = stageName
     }
 }
- // provavelmente vou ter que adicionar o isBookmarked aqui para ver como reage de uma view para outra 

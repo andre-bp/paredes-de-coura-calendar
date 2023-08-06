@@ -2,14 +2,14 @@ import SwiftUI
 
 @main
 struct ParedesDeCouraCalendarApp: App {
-    @StateObject var rootViewModel = RootViewModel()
+    @StateObject var store = Store()
     
     var body: some Scene {
         WindowGroup {
             RootView()
-                .environmentObject(rootViewModel)
+                .environmentObject(store)
                 .onAppear {
-                    rootViewModel.load()
+                    store.load()
                 }
         }
     }

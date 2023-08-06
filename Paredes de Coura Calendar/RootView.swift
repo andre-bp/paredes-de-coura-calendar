@@ -1,17 +1,17 @@
 import SwiftUI
 
 struct RootView: View {
-    @EnvironmentObject var viewModel: RootViewModel
+    @EnvironmentObject var store: Store
 
     var body: some View {
-        switch viewModel.state {
+        switch store.state {
         case .failed, .initial:
             EmptyView()
         case .loading:
             ProgressView()
         case .loaded:
             TabView {
-                HomepageView(viewModel: HomepageViewModel(concerts: viewModel.concerts))
+                HomepageView(viewModel: HomepageViewModel(concerts: store.concerts))
                     .tabItem {
                         Image(systemName: "house")
                         Text("Home")
@@ -23,13 +23,13 @@ struct RootView: View {
                         Text("Explore")
                     }
 
-                CalendarView()
+                CalendarView(viewModel: CalendarViewModel(concerts: store.concerts, dates: store.festivalDates, stages: store.stages, type: .general))
                     .tabItem {
                         Image(systemName: "calendar")
                         Text("Calendar")
                     }
 
-                SavedView()
+                CalendarView(viewModel: CalendarViewModel(concerts: store.concerts, dates: store.festivalDates, stages: store.stages, type: .saved))
                     .tabItem {
                         Image(systemName: "bookmark")
                         Text("Saved")
