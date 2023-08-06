@@ -3,12 +3,11 @@ import SwiftUI
 struct CalendarView: View {
     @ObservedObject var viewModel: CalendarViewModel
     @State private var selectedDate: Date
-    @State private var selectedStage: Stage
+    @State private var selectedStage: Stage?
     
     init(viewModel: CalendarViewModel) {
         self.viewModel = viewModel
         _selectedDate = State(initialValue: viewModel.dates[0])
-        _selectedStage = State(initialValue: viewModel.stages[0])
     }
 
     var body: some View {
@@ -20,19 +19,29 @@ struct CalendarView: View {
                 .bold()
 
             filtersView
-                .padding(.leading, 8)
+                .padding(.bottom, 12)
                 .frame(height: 150)
 
-            ScrollView {
+            concertsView
+                .padding(.horizontal, 10)
+        }
+        .padding(.leading, 10)
+        .onAppear {
+            viewModel.filterConcerts(date: selectedDate, stage: selectedStage)
+        }
+    }
+
+    var concertsView: some View {
+        ScrollView {
+            if viewModel.filteredConcerts.isEmpty {
+                
+            } else {
                 LazyVStack {
                     ForEach(viewModel.filteredConcerts) { concert in
                         concertView(viewModel: concert)
                     }
                 }
             }
-        }
-        .onAppear {
-            viewModel.filterConcerts(date: selectedDate, stage: selectedStage)
         }
     }
 
@@ -66,7 +75,7 @@ struct CalendarView: View {
     @ViewBuilder
     var filtersView: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ScrollView(.horizontal) {
+            ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack {
                     ForEach(viewModel.dates, id: \.self) { day in
                         Button(day.weekday()) {
@@ -78,15 +87,19 @@ struct CalendarView: View {
                 }
             }
 
-            ScrollView(.horizontal) {
-                LazyHStack {
-                    ForEach(viewModel.stages) { stage in
-                        Button(stage.name) {
-                            selectedStage = stage
-                            viewModel.filterConcerts(date: selectedDate, stage: stage)
-                        }
-                        .buttonStyle(RoundedButtonStyle(isSelected: selectedStage.id == stage.id))
+            HStack {
+                Button("All") {
+                    selectedStage = nil
+                    viewModel.filterConcerts(date: selectedDate, stage: nil)
+                }
+                .buttonStyle(RoundedButtonStyle(isSelected: selectedStage == nil ? true : false ))
+
+                ForEach(viewModel.stages) { stage in
+                    Button(stage.name) {
+                        selectedStage = stage
+                        viewModel.filterConcerts(date: selectedDate, stage: stage)
                     }
+                    .buttonStyle(RoundedButtonStyle(isSelected: selectedStage?.id == stage.id))
                 }
             }
         }

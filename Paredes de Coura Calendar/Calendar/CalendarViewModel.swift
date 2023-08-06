@@ -19,18 +19,25 @@ final class CalendarViewModel: ObservableObject {
         self.type = type
     }
 
-    func filterConcerts(date: Date, stage: Stage) {
-        let selectedComponents = date.dayMonthYearComponents()
-        
+    func filterConcerts(date: Date, stage: Stage?) {
         filteredConcerts = concerts.filter {
-            let concertDateComponent = $0.date.dayMonthYearComponents()
-            
             switch type {
             case .general:
-                return concertDateComponent == selectedComponents && $0.stageName == stage.name
+                return dateRule(concertDate: $0.date, selectedDate: date) && stageRule(concertStageName: $0.stageName, selectedStage: stage)
             case .saved:
-                return $0.isBookmarked && concertDateComponent == selectedComponents && $0.stageName == stage.name
+                return $0.isBookmarked && dateRule(concertDate: $0.date, selectedDate: date) && stageRule(concertStageName: $0.stageName, selectedStage: stage)
             }
         }
+    }
+
+    private func stageRule(concertStageName: String, selectedStage: Stage?) -> Bool {
+        guard let selectedStage else { return true }
+        return concertStageName == selectedStage.name
+    }
+
+    private func dateRule(concertDate: Date, selectedDate: Date) -> Bool {
+        let selectedDateComponents = selectedDate.dayMonthYearComponents()
+        let concertDateComponents = concertDate.dayMonthYearComponents()
+        return selectedDateComponents == concertDateComponents
     }
 }
