@@ -3,11 +3,14 @@ import SwiftUI
 struct CalendarView: View {
     @ObservedObject var viewModel: CalendarViewModel
     @State private var selectedDate: Date
+    @State private var selectedSort: CalendarViewModel.SortRule
     @State private var selectedStage: Stage?
     
     init(viewModel: CalendarViewModel) {
         self.viewModel = viewModel
         _selectedDate = State(initialValue: viewModel.dates[0])
+        _selectedSort = State(initialValue: .date)
+        viewModel.sortBy(rule: .date)
     }
 
     var body: some View {
@@ -20,7 +23,7 @@ struct CalendarView: View {
 
             filtersView
                 .padding(.bottom, 12)
-                .frame(height: 150)
+                .frame(height: 200)
 
             concertsView
                 .padding(.horizontal, 10)
@@ -72,35 +75,60 @@ struct CalendarView: View {
         }
     }
 
-    @ViewBuilder
     var filtersView: some View {
         VStack(alignment: .leading, spacing: 0) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack {
-                    ForEach(viewModel.dates, id: \.self) { day in
-                        Button(day.weekday()) {
-                            selectedDate = day
-                            viewModel.filterConcerts(date: day, stage: selectedStage)
-                        }
-                        .buttonStyle(RoundedButtonStyle(isSelected: selectedDate == day))
+            sortView
+            datesView
+            stagesView
+        }
+    }
+
+    private var sortView: some View {
+        HStack(alignment: .center, spacing: 4) {
+            Text("Sort by")
+
+            Button("Date") {
+                selectedSort = .date
+                viewModel.sortBy(rule: .date)
+            }
+            .buttonStyle(RoundedButtonStyle(isSelected: selectedSort == .date))
+
+            Button("Artist Name") {
+                selectedSort = .artistName
+                viewModel.sortBy(rule: .artistName)
+            }
+            .buttonStyle(RoundedButtonStyle(isSelected: selectedSort == .artistName))
+        }
+    }
+
+    private var datesView: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            LazyHStack {
+                ForEach(viewModel.dates, id: \.self) { day in
+                    Button(day.weekday()) {
+                        selectedDate = day
+                        viewModel.filterConcerts(date: day, stage: selectedStage)
                     }
+                    .buttonStyle(RoundedButtonStyle(isSelected: selectedDate == day))
                 }
             }
+        }
+    }
 
-            HStack {
-                Button("All") {
-                    selectedStage = nil
-                    viewModel.filterConcerts(date: selectedDate, stage: nil)
-                }
-                .buttonStyle(RoundedButtonStyle(isSelected: selectedStage == nil ? true : false ))
+    private var stagesView: some View {
+        HStack {
+            Button("All") {
+                selectedStage = nil
+                viewModel.filterConcerts(date: selectedDate, stage: nil)
+            }
+            .buttonStyle(RoundedButtonStyle(isSelected: selectedStage == nil ? true : false ))
 
-                ForEach(viewModel.stages) { stage in
-                    Button(stage.name) {
-                        selectedStage = stage
-                        viewModel.filterConcerts(date: selectedDate, stage: stage)
-                    }
-                    .buttonStyle(RoundedButtonStyle(isSelected: selectedStage?.id == stage.id))
+            ForEach(viewModel.stages) { stage in
+                Button(stage.name) {
+                    selectedStage = stage
+                    viewModel.filterConcerts(date: selectedDate, stage: stage)
                 }
+                .buttonStyle(RoundedButtonStyle(isSelected: selectedStage?.id == stage.id))
             }
         }
     }

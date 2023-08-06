@@ -11,30 +11,35 @@ struct RootView: View {
             ProgressView()
         case .loaded:
             TabView {
-                HomepageView(viewModel: HomepageViewModel(concerts: store.concerts))
-                    .tabItem {
-                        Image(systemName: "house")
-                        Text("Home")
-                    }
+                Group {
+                    HomepageView(viewModel: HomepageViewModel(concerts: store.concerts))
+                        .tabItem {
+                            Image(systemName: "house")
+                            Text("Home")
+                        }
 
-                ExploreView()
-                    .tabItem {
-                        Image(systemName: "magnifyingglass")
-                        Text("Explore")
-                    }
+                    ExploreView()
+                        .tabItem {
+                            Image(systemName: "magnifyingglass")
+                            Text("Explore")
+                        }
 
-                CalendarView(viewModel: CalendarViewModel(concerts: store.concerts, dates: store.festivalDates, stages: store.stages, type: .general))
-                    .tabItem {
-                        Image(systemName: "calendar")
-                        Text("Calendar")
-                    }
+                    CalendarView(viewModel: CalendarViewModel(concerts: store.concerts, dates: store.festivalDates, stages: store.stages, type: .general))
+                        .tabItem {
+                            Image(systemName: "calendar")
+                            Text("Calendar")
+                        }
 
-                CalendarView(viewModel: CalendarViewModel(concerts: store.concerts, dates: store.festivalDates, stages: store.stages, type: .saved))
-                    .tabItem {
-                        Image(systemName: "bookmark")
-                        Text("Saved")
-                    }
+                    CalendarView(viewModel: CalendarViewModel(concerts: store.concerts, dates: store.festivalDates, stages: store.stages, type: .saved))
+                        .tabItem {
+                            Image(systemName: "bookmark")
+                            Text("Saved")
+                        }
+                }
+                .toolbarBackground(.ultraThickMaterial, for: .tabBar)
+                .toolbarBackground(.visible, for: .tabBar)
             }
+            
         }
     }
 }

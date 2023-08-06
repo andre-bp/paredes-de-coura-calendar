@@ -6,17 +6,23 @@ final class CalendarViewModel: ObservableObject {
         case general, saved
     }
 
+    enum SortRule: CaseIterable {
+        case date, artistName
+    }
+    
     let concerts: [ConcertViewModel]
     let dates: [Date]
     @Published var filteredConcerts: [ConcertViewModel] = []
     let stages: [Stage]
     let type: CalendarType
+    var sortRule: SortRule
 
     init(concerts: [ConcertViewModel], dates: [Date], stages: [Stage], type: CalendarType) {
         self.concerts = concerts
         self.dates = dates
         self.stages = stages
         self.type = type
+        sortRule = .date
     }
 
     func filterConcerts(date: Date, stage: Stage?) {
@@ -28,6 +34,16 @@ final class CalendarViewModel: ObservableObject {
                 return $0.isBookmarked && dateRule(concertDate: $0.date, selectedDate: date) && stageRule(concertStageName: $0.stageName, selectedStage: stage)
             }
         }
+    }
+    
+    func sortBy(rule: SortRule) {
+        switch rule {
+        case .artistName:
+            filteredConcerts.sort { $0.artist < $1.artist }
+        case .date:
+            filteredConcerts.sort { $0.date < $1.date }
+        }
+//        filteredConcerts.
     }
 
     private func stageRule(concertStageName: String, selectedStage: Stage?) -> Bool {
