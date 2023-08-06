@@ -18,7 +18,7 @@ struct RootView: View {
                             Text("Home")
                         }
 
-                    ExploreView()
+                    ExploreView(viewModel: ExploreViewModel(concerts: store.concerts, festivalDates: store.festivalDates))
                         .tabItem {
                             Image(systemName: "magnifyingglass")
                             Text("Explore")

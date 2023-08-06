@@ -14,8 +14,8 @@ struct CalendarView: View {
     }
 
     var body: some View {
-        VStack {
-            Text(title)
+        VStack(alignment: .leading) {
+            Text(viewModel.type.viewTitle)
                 .padding(.leading, 4)
                 .padding(.bottom, 8)
                 .font(Font.title)
@@ -24,6 +24,9 @@ struct CalendarView: View {
             filtersView
                 .padding(.bottom, 12)
                 .frame(height: 200)
+
+            Divider()
+                .padding(.bottom)
 
             concertsView
                 .padding(.horizontal, 10)
@@ -34,7 +37,7 @@ struct CalendarView: View {
         }
     }
 
-    var concertsView: some View {
+    private var concertsView: some View {
         ScrollView {
             if viewModel.filteredConcerts.isEmpty {
                 
@@ -49,7 +52,7 @@ struct CalendarView: View {
     }
 
     @ViewBuilder
-    func concertView(viewModel: ConcertViewModel) -> some View {
+    private func concertView(viewModel: ConcertViewModel) -> some View {
         HStack(alignment: .top, spacing: 0) {
 //            AsyncImage(url: viewModel.imageURL)
             Image(systemName: "music.mic")
@@ -65,7 +68,7 @@ struct CalendarView: View {
 
             Spacer()
 
-            Image(systemName: bookmarkIconSystemName(isBookmarked: viewModel.isBookmarked))
+            Image(systemName: viewModel.isBookmarked.bookmarkIconSystemName)
                 .onTapGesture {
                     viewModel.isBookmarked.toggle()
                     withAnimation {
@@ -75,7 +78,7 @@ struct CalendarView: View {
         }
     }
 
-    var filtersView: some View {
+    private var filtersView: some View {
         VStack(alignment: .leading, spacing: 0) {
             sortView
             datesView
@@ -86,6 +89,8 @@ struct CalendarView: View {
     private var sortView: some View {
         HStack(alignment: .center, spacing: 4) {
             Text("Sort by")
+                .padding(.trailing, 2)
+                .bold()
 
             Button("Date") {
                 selectedSort = .date
@@ -132,22 +137,11 @@ struct CalendarView: View {
             }
         }
     }
+}
 
-    var title: String {
-        switch viewModel.type {
-        case .general:
-            return "General Calendar"
-        case .saved:
-            return "My Calendar"
-        }
-    }
-
-    private func bookmarkIconSystemName(isBookmarked: Bool) -> String {
-        if isBookmarked {
-            return "bookmark.fill"
-        } else {
-            return "bookmark"
-        }
+extension Bool {
+    var bookmarkIconSystemName: String {
+        return self ? "bookmark.fill" : "bookmark"
     }
 }
 

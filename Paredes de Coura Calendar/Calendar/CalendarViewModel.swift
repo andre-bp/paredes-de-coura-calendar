@@ -4,12 +4,21 @@ import Combine
 final class CalendarViewModel: ObservableObject {
     enum CalendarType {
         case general, saved
+
+        var viewTitle: String {
+            switch self {
+            case .general:
+                return "General Calendar"
+            case .saved:
+                return "My Calendar"
+            }
+        }
     }
 
-    enum SortRule: CaseIterable {
+    enum SortRule {
         case date, artistName
     }
-    
+
     let concerts: [ConcertViewModel]
     let dates: [Date]
     @Published var filteredConcerts: [ConcertViewModel] = []
@@ -35,7 +44,7 @@ final class CalendarViewModel: ObservableObject {
             }
         }
     }
-    
+
     func sortBy(rule: SortRule) {
         switch rule {
         case .artistName:
@@ -43,7 +52,6 @@ final class CalendarViewModel: ObservableObject {
         case .date:
             filteredConcerts.sort { $0.date < $1.date }
         }
-//        filteredConcerts.
     }
 
     private func stageRule(concertStageName: String, selectedStage: Stage?) -> Bool {

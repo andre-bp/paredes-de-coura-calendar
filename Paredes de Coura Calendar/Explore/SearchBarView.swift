@@ -10,12 +10,16 @@ struct SearchBar: View {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(.gray)
             
-            TextField("Search", text: $text)
+            TextField(text, text: $text)
                 .padding(7)
                 .cornerRadius(8)
                 .onSubmit {
                     submitClosure(text)
                 }
+                .onTapGesture {
+                    text = ""
+                }
+
         }
         .padding(.all, 4)
         .background(Color(.systemGray6))
