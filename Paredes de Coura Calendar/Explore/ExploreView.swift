@@ -46,11 +46,11 @@ struct ExploreView: View {
 
     var resultsView: some View {
         ScrollView(.vertical, showsIndicators: false) {
-            if viewModel.dict.values.isEmpty {
+            if viewModel.concertsByDay.values.isEmpty {
                 EmptyView()
             } else {
-                ForEach(Array(viewModel.dict.keys.sorted(by: <)), id: \.self) { day in
-                    if let concerts = viewModel.dict[day],
+                ForEach(Array(viewModel.concertsByDay.keys.sorted(by: <)), id: \.self) { day in
+                    if let concerts = viewModel.concertsByDay[day],
                        !concerts.isEmpty {
                         Text(day.weekday())
                         ForEach(concerts) { concert in

@@ -29,7 +29,6 @@
 		495A12082A74584300753586 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12072A74584300753586 /* ExploreView.swift */; };
 		495A120A2A74584C00753586 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12092A74584C00753586 /* CalendarView.swift */; };
 		495A120E2A7479C800753586 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A120D2A7479C800753586 /* SearchBarView.swift */; };
-		495A12122A74803100753586 /* Festival.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12112A74803100753586 /* Festival.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +74,6 @@
 		495A12072A74584300753586 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		495A12092A74584C00753586 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		495A120D2A7479C800753586 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
-		495A12112A74803100753586 /* Festival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Festival.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +200,6 @@
 				495A11FF2A74580100753586 /* Artist.swift */,
 				495A12012A74581200753586 /* Concert.swift */,
 				495A12032A74581E00753586 /* Stage.swift */,
-				495A12112A74803100753586 /* Festival.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -338,7 +335,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				495A12122A74803100753586 /* Festival.swift in Sources */,
 				495A120E2A7479C800753586 /* SearchBarView.swift in Sources */,
 				495A12082A74584300753586 /* ExploreView.swift in Sources */,
 				495A12062A74583800753586 /* HomepageView.swift in Sources */,
