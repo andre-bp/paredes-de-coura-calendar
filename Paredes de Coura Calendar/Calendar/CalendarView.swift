@@ -3,14 +3,11 @@ import SwiftUI
 struct CalendarView: View {
     @ObservedObject var viewModel: CalendarViewModel
     @State private var selectedDate: Date
-    @State private var selectedSort: CalendarViewModel.SortRule
     @State private var selectedStage: Stage?
     
     init(viewModel: CalendarViewModel) {
         self.viewModel = viewModel
         _selectedDate = State(initialValue: viewModel.dates[0])
-        _selectedSort = State(initialValue: .date)
-        viewModel.sortBy(rule: .date)
     }
 
     var body: some View {
@@ -93,16 +90,16 @@ struct CalendarView: View {
                 .bold()
 
             Button("Date") {
-                selectedSort = .date
-                viewModel.sortBy(rule: .date)
+                viewModel.sortRule = .date
+                viewModel.sortConcerts()
             }
-            .buttonStyle(RoundedButtonStyle(isSelected: selectedSort == .date))
+            .buttonStyle(RoundedButtonStyle(isSelected: viewModel.sortRule == .date))
 
             Button("Artist Name") {
-                selectedSort = .artistName
-                viewModel.sortBy(rule: .artistName)
+                viewModel.sortRule = .artistName
+                viewModel.sortConcerts()
             }
-            .buttonStyle(RoundedButtonStyle(isSelected: selectedSort == .artistName))
+            .buttonStyle(RoundedButtonStyle(isSelected: viewModel.sortRule == .artistName))
         }
     }
 

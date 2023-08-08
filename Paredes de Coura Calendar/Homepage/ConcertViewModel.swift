@@ -13,8 +13,10 @@ final class ConcertViewModel: Identifiable, ObservableObject {
     init(_ concert: Concert) {
         id = concert.id
         artist = concert.artist.name
-        let hour = Calendar.current.component(.hour, from: concert.date)
-        let minutes = Calendar.current.component(.minute, from: concert.date)
+        var calendar = Calendar.current
+        calendar.timeZone = TimeZone(identifier: "UTC")! // 😬
+        let hour = calendar.component(.hour, from: concert.date)
+        let minutes = calendar.component(.minute, from: concert.date)
         concertHour = String(hour) + "h" + String(minutes)
         date = concert.date
         imageURL = URL(string: concert.artist.imagePath)

@@ -22,4 +22,8 @@ extension Date {
     var dayAfter: Date {
         return Calendar.current.date(byAdding: .day, value: 1, to: Date()) ?? Date()
     }
+
+    var hour: Int {
+        Calendar.current.component(.hour, from: self)
+    }
 }
