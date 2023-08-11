@@ -4,6 +4,7 @@ struct CalendarView: View {
     @ObservedObject var viewModel: CalendarViewModel
     @State private var selectedDate: Date
     @State private var selectedStage: Stage?
+    @EnvironmentObject var store: Store
     
     init(viewModel: CalendarViewModel) {
         self.viewModel = viewModel
@@ -35,7 +36,7 @@ struct CalendarView: View {
     }
 
     private var concertsView: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             if viewModel.filteredConcerts.isEmpty {
                 
             } else {
@@ -68,6 +69,7 @@ struct CalendarView: View {
             Image(systemName: viewModel.isBookmarked.bookmarkIconSystemName)
                 .onTapGesture {
                     viewModel.isBookmarked.toggle()
+                    store.saveBookmark(id: viewModel.id, isBookmarked: viewModel.isBookmarked)
                     withAnimation {
                         self.viewModel.filterConcerts(date: selectedDate, stage: selectedStage)
                     }

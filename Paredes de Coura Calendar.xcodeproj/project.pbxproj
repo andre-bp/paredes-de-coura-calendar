@@ -29,6 +29,7 @@
 		495A12082A74584300753586 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12072A74584300753586 /* ExploreView.swift */; };
 		495A120A2A74584C00753586 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A12092A74584C00753586 /* CalendarView.swift */; };
 		495A120E2A7479C800753586 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495A120D2A7479C800753586 /* SearchBarView.swift */; };
+		49C0A0972A841200001C9EEC /* ConcertsData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49C0A0952A841200001C9EEC /* ConcertsData.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		495A12072A74584300753586 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		495A12092A74584C00753586 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		495A120D2A7479C800753586 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		49C0A0962A841200001C9EEC /* Main.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Main.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +176,7 @@
 				495A11D72A74578600753586 /* Assets.xcassets */,
 				495A11D92A74578600753586 /* Preview Content */,
 				492CEF7D2A75245D00F3FABA /* Store.swift */,
+				49C0A0952A841200001C9EEC /* ConcertsData.xcdatamodeld */,
 			);
 			path = "Paredes de Coura Calendar";
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				492CEF842A7543EF00F3FABA /* ConcertView.swift in Sources */,
 				492CEF882A7550D200F3FABA /* ConcertViewModel.swift in Sources */,
 				495A12042A74581E00753586 /* Stage.swift in Sources */,
+				49C0A0972A841200001C9EEC /* ConcertsData.xcdatamodeld in Sources */,
 				492CEF822A75317200F3FABA /* HomepageViewModel.swift in Sources */,
 				492CEF7E2A75245D00F3FABA /* Store.swift in Sources */,
 				495A12002A74580100753586 /* Artist.swift in Sources */,
@@ -669,6 +673,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		49C0A0952A841200001C9EEC /* ConcertsData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				49C0A0962A841200001C9EEC /* Main.xcdatamodel */,
+			);
+			currentVersion = 49C0A0962A841200001C9EEC /* Main.xcdatamodel */;
+			path = ConcertsData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 495A11C82A74578300753586 /* Project object */;
 }

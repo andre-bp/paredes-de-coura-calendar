@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct ExploreView: View {
+    @EnvironmentObject var store: Store
     @ObservedObject var viewModel: ExploreViewModel
     @State var searchBarInput: String = "Search an artist here"
 
@@ -80,6 +81,7 @@ struct ExploreView: View {
             Image(systemName: concert.isBookmarked.bookmarkIconSystemName)
                 .onTapGesture {
                     concert.isBookmarked.toggle()
+                    store.saveBookmark(id: concert.id, isBookmarked: concert.isBookmarked)
                     withAnimation {
                         viewModel.objectWillChange.send()
                     }

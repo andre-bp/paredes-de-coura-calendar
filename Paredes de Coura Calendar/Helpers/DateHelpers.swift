@@ -26,4 +26,8 @@ extension Date {
     var hour: Int {
         Calendar.current.component(.hour, from: self)
     }
+    
+    var day: Int {
+        Calendar.current.component(.day, from: self)
+    }
 }
