@@ -23,7 +23,7 @@ final class ExploreViewModel: ObservableObject {
             festivalDates.forEach { date in
                 concertsByDay[date] = concerts.filter {
                     return $0.date.dayMonthYearComponents() == date.dayMonthYearComponents()
-                    && $0.artist.hasPrefix(input)
+                    && $0.artist.lowercased().hasPrefix(input.lowercased())
                 }
             }
         }

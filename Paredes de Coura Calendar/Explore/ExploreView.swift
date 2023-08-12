@@ -14,6 +14,9 @@ struct ExploreView: View {
                 .padding(.bottom)
 
             resultsView
+                .onTapGesture {
+                    
+                }
         }
         .padding(.horizontal, 20)
     }
@@ -28,15 +31,11 @@ struct ExploreView: View {
                 SearchBar(
                     text: $searchBarInput,
                     submitClosure: { input in
-                        withAnimation {
-                            viewModel.filterArtist(input)
-                        }
+                        viewModel.filterArtist(input)
                     }
                 )
                 .onChange(of: searchBarInput, perform: { input in
-                    withAnimation {
-                        viewModel.filterArtist(input)
-                    }
+                    viewModel.filterArtist(input)
                 })
 
             }
@@ -90,8 +89,10 @@ struct ExploreView: View {
     }
 }
 
-struct ExploreView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExploreView(viewModel: ExploreViewModel(concerts: [ConcertViewModel(.stub())], festivalDates: []))
-    }
-}
+//#if targetEnvironment(simulator)
+//struct ExploreView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ExploreView(viewModel: ExploreViewModel(concerts: [ConcertViewModel(.stub())], festivalDates: []))
+//    }
+//}
+//#endif
