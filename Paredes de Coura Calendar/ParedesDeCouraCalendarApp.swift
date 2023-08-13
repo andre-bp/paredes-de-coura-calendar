@@ -12,6 +12,7 @@ struct ParedesDeCouraCalendarApp: App {
                 .onAppear {
                     store.fetchConcerts()
                 }
+                .preferredColorScheme(.light)
         }
     }
 }

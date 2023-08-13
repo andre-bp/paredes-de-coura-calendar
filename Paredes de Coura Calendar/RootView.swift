@@ -5,9 +5,9 @@ struct RootView: View {
 
     var body: some View {
         switch store.state {
-        case .failed, .initial:
+        case .failed:
             EmptyView()
-        case .loading:
+        case .initial, .loading:
             ProgressView()
         case .loaded:
             TabView {

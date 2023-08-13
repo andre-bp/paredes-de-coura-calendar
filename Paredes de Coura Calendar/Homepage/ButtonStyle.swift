@@ -2,19 +2,30 @@ import SwiftUI
 
 struct RoundedButtonStyle: ButtonStyle {
     var isSelected: Bool
+    var stage: Stage?
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .padding()
             .background(
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(isSelected ? Color.black : Color.white)
+                Capsule()
+                    .fill(isSelected ? color : Color.white)
                     .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color.black, lineWidth: isSelected ? 0 : 2)
+                        Capsule()
+                            .stroke(color, lineWidth: isSelected ? 0 : 1)
                     )
             )
-            .foregroundColor(isSelected ? Color.white : Color.black)
+            .foregroundColor(isSelected ? Color.white : color)
             .font(isSelected ? Font.body.bold() : .body)
+    }
+
+    var color: Color {
+        if stage?.name == "Vodafone" {
+            return Color.red
+        } else if stage?.name == "Yorn" {
+            return Color.purple
+        } else {
+            return Color.black
+        }
     }
 }

@@ -14,22 +14,22 @@ struct CalendarView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Text(viewModel.type.viewTitle)
-                .padding(.leading, 4)
-                .padding(.bottom, 8)
-                .font(Font.title)
                 .bold()
+                .font(Font.title)
+                .padding(.leading, 12)
+                .padding(.bottom, 8)
 
             filtersView
                 .padding(.bottom, 12)
+                .padding(.leading, 20)
                 .frame(height: 200)
-
+            
             Divider()
-                .padding(.bottom)
 
             concertsView
-                .padding(.horizontal, 10)
+                .padding(.horizontal, -12)
         }
-        .padding(.leading, 10)
+        .padding(.horizontal, 12)
         .onAppear {
             viewModel.filterConcerts(date: selectedDate, stage: selectedStage)
         }
@@ -38,9 +38,9 @@ struct CalendarView: View {
     private var concertsView: some View {
         ScrollView(showsIndicators: false) {
             if viewModel.filteredConcerts.isEmpty {
-                
+                EmptyView()
             } else {
-                LazyVStack {
+                LazyVStack(spacing: 0) {
                     ForEach(viewModel.filteredConcerts) { concert in
                         concertView(viewModel: concert)
                     }
@@ -51,22 +51,38 @@ struct CalendarView: View {
 
     @ViewBuilder
     private func concertView(viewModel: ConcertViewModel) -> some View {
-        HStack(alignment: .top, spacing: 0) {
-//            AsyncImage(url: viewModel.imageURL)
-            Image(systemName: "music.mic")
-                .frame(width: 50, height: 50)
+        HStack(alignment: .center, spacing: 0) {
+            AsyncImage(url: viewModel.imageURL) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100)
+                    .clipped()
+            } placeholder: {
+                Color.gray
+                    .frame(width: 100, height: 100)
+            }
+            .padding()
 
             VStack(alignment: .leading, spacing: 0) {
                 Text(viewModel.concertHour)
-
+                    .padding(.bottom, 12)
                 Text(viewModel.artist)
+                    .padding(.bottom, 8)
+                    .bold()
 
-                Text(viewModel.stageName)
+                HStack(alignment: .center, spacing: 0) {
+                    Circle()
+                        .fill(circleColor(isBookmarked: viewModel.isBookmarked, stage: viewModel.stageName))
+                        .frame(width: 15, height: 15)
+                        .padding(.trailing, 8)
+                    Text(viewModel.stageName)
+                }
             }
 
             Spacer()
 
-            Image(systemName: viewModel.isBookmarked.bookmarkIconSystemName)
+            Image(systemName: bookmarkIcon(isBookmarked: viewModel.isBookmarked))
                 .onTapGesture {
                     viewModel.isBookmarked.toggle()
                     store.saveBookmark(id: viewModel.id, isBookmarked: viewModel.isBookmarked)
@@ -74,11 +90,44 @@ struct CalendarView: View {
                         self.viewModel.filterConcerts(date: selectedDate, stage: selectedStage)
                     }
                 }
+                .padding(.top, 8)
+                .padding()
+        }
+        .background(backgroundColor(isBookmarked: viewModel.isBookmarked, stage: viewModel.stageName))
+        .contentShape(Rectangle())
+    }
+
+    private func backgroundColor(isBookmarked: Bool, stage: String) -> Color {
+        switch isBookmarked {
+        case true:
+            if stage == "Vodafone" {
+                return Color.red
+            } else {
+                return Color.purple
+            }
+        case false:
+            if stage == "Vodafone" {
+                return Color(red: 255 / 255, green: 202 / 255, blue: 202 / 255)
+            } else {
+                return Color(red: 232 / 255, green: 212 / 255, blue: 252 / 255)
+            }
         }
     }
 
+    private func circleColor(isBookmarked: Bool, stage: String) -> Color {
+        if isBookmarked {
+            return .white
+        } else {
+            if stage == "Vodafone" {
+                return .red
+            } else {
+                return .purple
+            }
+        }
+    }
+    
     private var filtersView: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: 4) {
             sortView
             datesView
             stagesView
@@ -88,7 +137,7 @@ struct CalendarView: View {
     private var sortView: some View {
         HStack(alignment: .center, spacing: 4) {
             Text("Sort by")
-                .padding(.trailing, 2)
+                .padding(.trailing, 4)
                 .bold()
 
             Button("Date") {
@@ -132,8 +181,17 @@ struct CalendarView: View {
                     selectedStage = stage
                     viewModel.filterConcerts(date: selectedDate, stage: stage)
                 }
-                .buttonStyle(RoundedButtonStyle(isSelected: selectedStage?.id == stage.id))
+                .buttonStyle(RoundedButtonStyle(isSelected: selectedStage?.id == stage.id, stage: stage))
             }
+        }
+    }
+
+    private func bookmarkIcon(isBookmarked: Bool) -> String {
+        switch viewModel.type {
+        case .general:
+            return isBookmarked.bookmarkIconSystemName
+        case .saved:
+            return "trash.fill"
         }
     }
 }

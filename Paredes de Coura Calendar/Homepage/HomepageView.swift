@@ -61,6 +61,7 @@ struct HomepageView: View {
             itemsListView
                 .padding(.top, 4)
         }
+        .padding(.horizontal, 20)
     }
 }
 

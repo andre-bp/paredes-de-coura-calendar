@@ -14,9 +14,6 @@ struct ExploreView: View {
                 .padding(.bottom)
 
             resultsView
-                .onTapGesture {
-                    
-                }
         }
         .padding(.horizontal, 20)
     }
@@ -26,6 +23,7 @@ struct ExploreView: View {
             VStack(alignment: .leading, spacing: 0) {
                 Text("Search")
                     .bold()
+                    .font(.title)
                     .padding(.bottom, 8)
 
                 SearchBar(
@@ -52,9 +50,13 @@ struct ExploreView: View {
                 ForEach(Array(viewModel.concertsByDay.keys.sorted(by: <)), id: \.self) { day in
                     if let concerts = viewModel.concertsByDay[day],
                        !concerts.isEmpty {
-                        Text(day.weekday())
-                        ForEach(concerts) { concert in
-                            searchResultView(concert: concert)
+                        VStack(alignment: .center, spacing: 0) {
+                            Text(day.weekday())
+                                .bold()
+                                .padding(.bottom, 4)
+                            ForEach(concerts) { concert in
+                                searchResultView(concert: concert)
+                            }
                         }
                     }
                 }
@@ -62,17 +64,35 @@ struct ExploreView: View {
         }
     }
 
+    @ViewBuilder
     private func searchResultView(concert: ConcertViewModel) ->  some View {
-        HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "music.mic")
-                .frame(width: 50, height: 50)
+        HStack(alignment: .center, spacing: 0) {
+            AsyncImage(url: concert.imageURL) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 100, height: 100)
+                    .clipped()
+            } placeholder: {
+                Color.gray
+                    .frame(width: 100, height: 100)
+            }
+            .padding()
 
-            VStack(alignment: .leading, spacing: 4) {
+            VStack(alignment: .leading, spacing: 0) {
                 Text(concert.concertHour)
-                
+                    .padding(.bottom, 12)
                 Text(concert.artist)
-                
-                Text(concert.stageName)
+                    .padding(.bottom, 8)
+                    .bold()
+
+                HStack(alignment: .center, spacing: 0) {
+                    Circle()
+                        .fill(circleColor(isBookmarked: concert.isBookmarked, stage: concert.stageName))
+                        .frame(width: 15, height: 15)
+                        .padding(.trailing, 8)
+                    Text(concert.stageName)
+                }
             }
 
             Spacer()
@@ -85,6 +105,39 @@ struct ExploreView: View {
                         viewModel.objectWillChange.send()
                     }
                 }
+                .padding(.top, 8)
+                .padding()
+        }
+        .background(backgroundColor(isBookmarked: concert.isBookmarked, stage: concert.stageName))
+        .contentShape(Rectangle())
+    }
+
+    private func circleColor(isBookmarked: Bool, stage: String) -> Color {
+        if isBookmarked {
+            return .white
+        } else {
+            if stage == "Vodafone" {
+                return .red
+            } else {
+                return .purple
+            }
+        }
+    }
+
+    private func backgroundColor(isBookmarked: Bool, stage: String) -> Color {
+        switch isBookmarked {
+        case true:
+            if stage == "Vodafone" {
+                return Color.red
+            } else {
+                return Color.purple
+            }
+        case false:
+            if stage == "Vodafone" {
+                return Color(red: 255 / 255, green: 202 / 255, blue: 202 / 255)
+            } else {
+                return Color(red: 232 / 255, green: 212 / 255, blue: 252 / 255)
+            }
         }
     }
 }
