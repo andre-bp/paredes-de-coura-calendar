@@ -2,6 +2,8 @@
 `Paredes de Coura Calendar` is an iOS app created in collaboration with my friend Pedro Valente.
 Due to our shared interest in music and more specifically the music festival Vodafone Paredes de Coura, we decided to create this application as a personal project. Pedro handled the UI/UX of the app, while I implemented it. With a somewhat strict deadline, we were able to develop this project and use it in the 2023 edition of the festival.
 
+<img src="https://github.com/andre-bp/paredes-de-coura-calendar/assets/110901475/f6c6cc4b-e865-466b-95ee-fa56904c2bb1" width="260" height="560">
+
 This application gives users the possibility to see the lineup of the festival, search for artists to see where and at what time they are playing, and finally have a general calendar where you can filter the artists by festival days, stages and concerts the user bookmarked.
 
 ## To Do
